@@ -4,5 +4,5 @@ COPY .. /usr/src/app/
 WORKDIR /usr/src/app/
 EXPOSE 5000
 COPY . .
-RUN pip3 install -r requirements.txt
+RUN pip install Flask
 CMD ["python", "app.py"]
