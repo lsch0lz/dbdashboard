@@ -4,5 +4,5 @@ COPY .. /usr/src/app/
 WORKDIR /usr/src/app/
 EXPOSE 5000
 COPY . .
-RUN pip install Flask
+RUN pip install Flask requests
 CMD ["python", "app.py"]
