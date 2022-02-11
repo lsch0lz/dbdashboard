@@ -9,3 +9,15 @@ services:
         environment:
             PORT: 5000
             FLASK_DEBUG: 1
+    db:
+        image: mysql
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: dbdashboard
+        ports:
+            - "3307:3306"
+        volumes:
+            - my-db:/var/lib/mysql
+volumes:
+    my-db:
