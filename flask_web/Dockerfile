@@ -3,5 +3,6 @@ RUN mkdir /usr/src/app/
 COPY .. /usr/src/app/
 WORKDIR /usr/src/app/
 EXPOSE 8080
+RUN ls -l
 RUN pip install Flask
 CMD ["python", "app.py"]
