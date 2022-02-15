@@ -3,6 +3,5 @@ RUN mkdir /usr/src/app/
 COPY .. /usr/src/app/
 WORKDIR /usr/src/app/
 EXPOSE 8080
-COPY requirements.txt /tmp/
-RUN pip install --requirement /tmp/requirements.txt
+RUN pip install --requirement /usr/src/app/requirements.txt
 CMD ["python", "app.py"]
