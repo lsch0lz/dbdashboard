@@ -27,7 +27,7 @@ def route_create_user():
 def check():
     return render_template('pwd.html')
 
-@app.route('/check', methods=['POST'])
+@app.route('/login', methods=['POST'])
 def route_verify_password():
     email = request.form['email']
     password = request.form['password']
