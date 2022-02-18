@@ -1,6 +1,7 @@
 import os
 from flask import Flask, render_template, request
-from controller.database import get_conn, create_user
+from controller.database import get_conn
+from model.registration import create_user
 
 app = Flask(__name__)
 
