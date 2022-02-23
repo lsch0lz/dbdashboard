@@ -2,7 +2,7 @@ import mysql.connector
 from mysql.connector import Error
 
 # returns connection to database 'dbdashboard'
-def get_conn() -> mysql.connector.connection_cext.CMySQLConnection:
+def get_conn() -> mysql.connector.connection.MySQLConnection:
     try:
         conn = mysql.connector.connect(host='db',
                                              database='dbdashboard',
