@@ -32,6 +32,7 @@ jobs:
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/dbdashboard:latest
           
   test:
+    needs: build
     runs-on: ubuntu-latest
     container: 
       image: picasso99/dbdashboard
