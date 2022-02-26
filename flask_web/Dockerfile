@@ -5,5 +5,5 @@ WORKDIR /usr/src/app/
 EXPOSE 8080
 RUN pwd
 RUN ls -l
-RUN pip install -r requirements.txt && pip install -r flask_web/requirements.txt
+RUN pip install -r flask_web/requirements.txt
 CMD ["python", "app.py"]
