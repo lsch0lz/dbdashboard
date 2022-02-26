@@ -6,4 +6,4 @@ EXPOSE 8080
 RUN pwd
 RUN ls -l
 RUN pip install -r flask_web/requirements.txt
-CMD ["python", "app.py"]
+CMD ["python", "flask_web/app.py"]
