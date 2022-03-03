@@ -16,9 +16,13 @@ services:
         environment:
             MYSQL_ROOT_PASSWORD: root
             MYSQL_DATABASE: dbdashboard
+            MYSQL_USER: testuser
+            MYSQL_PASSWORD: testuser
         ports:
             - "3307:3306"
         volumes:
             - my-db:/var/lib/mysql
+            - ./data:/docker-entrypoint-initdb.d
 volumes:
     my-db:
+    data:
