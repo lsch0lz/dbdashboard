@@ -34,5 +34,19 @@ def route_verify_password():
     val = verify_password(email, password)
     return {'Msg': val}
 
+# signup
+@app.route('/signup')
+def signup_user():
+    return render_template('signup.html')
+
+@app.route('/signup', methods=['POST'])
+def route_signup_user():
+    name = request.form['name']
+    lastname = request.form['lastname']
+    email = request.form['email']
+    password = request.form['password']
+    create_user(name, lastname, email, password)
+    return render_template('signup.html')
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=os.getenv('PORT'))
