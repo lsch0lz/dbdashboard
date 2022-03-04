@@ -9,17 +9,16 @@ services:
         environment:
             PORT: 8080
             FLASK_DEBUG: 1
-    db:
+    postgres:
         platform: linux/x86_64
-        image: mysql
+        image: postgres
         restart: always
         environment:
-            MYSQL_ROOT_PASSWORD: root
-            MYSQL_DATABASE: dbdashboard
-            MYSQL_USER: testuser
-            MYSQL_PASSWORD: testuser
+            POSTGRES_USER: testuser
+            POSTGRES_PASSWORD: testuser
+            APP_DB_NAME: dbdashboard
         ports:
-            - "3307:3306"
+            - "5432:5432"
         volumes:
             - my-db:/var/lib/mysql
             - ./data:/docker-entrypoint-initdb.d
