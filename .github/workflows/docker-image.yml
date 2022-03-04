@@ -59,4 +59,13 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/dbdashboard:latest
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: DigitalOcean App Platform deployment
+        uses: digitalocean/app_action@main
+        with:
+          app_name: picasso-99-dbdashboard
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
 
