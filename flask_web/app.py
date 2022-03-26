@@ -1,4 +1,5 @@
 import os
+import sys
 from flask import Flask, render_template, request
 
 from controller.database import get_conn
@@ -44,10 +45,10 @@ def route_verify_password():
     email = request.form['email']
     password = request.form['password']
     if verify_password(email, password) == True:
-        print("Password is OK")
+        print('Password is OK', file=sys.stderr)
         return render_template('dashboard.html')
     else:
-        print("Password is NOT ok")
+        print('Password is NOT ok', file=sys.stderr)
         return render_template('login.html')
 
 
