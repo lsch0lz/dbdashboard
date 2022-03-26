@@ -11,7 +11,7 @@ def verify_password(email: str, password_user: str) -> bool:
     conn = get_conn()
     cursor = conn.cursor()
 
-    query = "SELECT password FROM user WHERE email = " + "'" + email + "';"
+    query = "SELECT password FROM users WHERE email = " + "'" + email + "';"
     cursor.execute(query)
     result = cursor.fetchall()
 
@@ -21,4 +21,6 @@ def verify_password(email: str, password_user: str) -> bool:
 
     if sha256_crypt.verify(str(password_user), result__):
         # TODO: redirect to homepage
-        return None
+        return True
+    else:
+        return False
