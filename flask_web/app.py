@@ -43,7 +43,7 @@ def check():
 def route_verify_password():
     email = request.form['email']
     password = request.form['password']
-    val = verify_password(email, password)
+    verify_password(email, password)
     return render_template('dashboard.html')
 
 # signup
