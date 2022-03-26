@@ -3,7 +3,6 @@ from controller.database import get_conn
 from controller.encryption import hash_password
 
 # registers a new user to the database
-# TODO: hash the password
 def create_user(name: str, lastname: str, email: str, password: str):
     password_ = hash_password(password)
 

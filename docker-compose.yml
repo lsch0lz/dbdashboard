@@ -18,7 +18,7 @@ services:
             POSTGRES_PASSWORD: testuser
             APP_DB_NAME: dbdashboard
         ports:
-            - "5432:5432"
+            - "2506:2506"
         volumes:
             - my-db:/var/lib/mysql
             - ./data:/docker-entrypoint-initdb.d

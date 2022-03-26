@@ -1,0 +1,117 @@
+<style>
+/*DB Font*/
+@font-face {
+    font-family: 'db_sans';
+    src: url('/static/fonts/db_sans_regular-webfont.woff2') format('woff2'),
+         url('/static/fonts/db_sans_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;}
+@font-face {
+    font-family: 'db_sans';
+    src: url('/static/fonts/db_sans_bold-webfont.woff2') format('woff2'),
+         url('/static/fonts/db_sans_bold-webfont.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;}
+@font-face {
+    font-family: 'db_sans';
+    src: url('/static/fonts/db_sans_black-webfont.woff2') format('woff2'),
+         url('/static/assets/fonts/db_sans_black-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;}
+html, body{font-family: 'db_sans' !important;}
+
+            /*Dark Mode*/ @media (prefers-color-scheme: dark) {
+              
+            body{
+              background-color: #111;
+              color: white;
+            }
+            
+            .bg-dark {background-color: #191919 !important;}
+            
+            /*Navbar*/
+            .nav-link.active {color: #dc3545 !important;font-weight: 900;}
+            .nav-link {color: white !important;}
+            a.nav-link.disabled  {color: #aaa !important;}
+            .navbar-brand {color: white;}
+              
+            /*Inputs*/
+            .form-control {background: transparent;}
+            input {color: white !important;}
+            input:focus {background-color: #111 !important;}
+          
+            /*Collapse*/
+            .card.card-body {
+              background-color: transparent;
+              background-color: #1c1f23 !important;}
+            .optionen {
+              background-color:#5c636a;
+              color: white !important;}
+            
+            /*Tables*/
+            table {color: white !important;}
+          
+            /*Footer*/
+            footer div {color: black !important;}
+
+}/*WhiteMode*/
+
+
+/*Navbar*/
+.navbar {
+}
+
+/*.navbar-toggler {
+border: none !important;
+outline: none !important;
+}*/
+
+
+a:hover{
+  color: #ddd;
+}
+
+/*Inputs*/
+.form-control {
+    background-color: #1c1f23;
+    border: none;}
+
+/*Collapse*/
+.card.card-body {
+  background-color: transparent;
+  background-color: #1c1f23 !important;}
+.optionen {
+    background-color:#5c636a;
+    border: none !important;
+    color: white !important;}
+#collapseExample {margin-top: 20px;}
+.p-4 {padding: 0px !important;}
+
+/*Tables*/
+
+
+
+
+.static {
+  position:absolute;
+  background: white;
+}
+
+.static:hover {
+  opacity:0;
+}
+
+img.active {
+    top: 10px;
+}
+
+img.static {
+top: 15.45px;
+    /* height: 30px !important; */
+}
+
+
+
+
+
+</style>

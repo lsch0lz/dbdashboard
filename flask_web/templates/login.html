@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+{% set active_page = "login" %}
+
+{% block content %}
+<div class="container">
+  <br />
+  <br />
+  <br />
+  <br />
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-12 col-md-6">
+        <h1>{{title}}</h1>
+        <p>{{description}}</p>
+        <form>
+          <div class="form-group">
+            
+            <label for="email">E-Mail</label>
+            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="" />
+
+            <label for="password">Passwort</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="" />
+            
+            <input type="checkbox" class="form-check-input" id="checkbox" name="checkbox" />
+            <label class="form-check-label" for="exampleCheck1">Eingeloggt bleiben</label>
+            
+            <br />
+            <br />
+            
+            <button type="submit" class="btn btn-danger btn-block w-100">Login</button>
+            
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
