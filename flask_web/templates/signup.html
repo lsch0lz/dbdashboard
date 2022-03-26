@@ -1,31 +1,40 @@
+{% extends 'layout.html' %}
+{% set active_page = "signup" %}
 
+{% block content %}
 <div class="container">
-  <br><br><br><br>
+  <br />
+  <br />
+  <br />
+  <br />
   <div class="container">
     <div class="row justify-content-md-center">
+      <div class="col-12 col-md-6">
+        <h1>{{title}}</h1>
+        <p>{{description}}</p>
+        <form method="POST">
+          <div class="form-group">
+            
+            <label for="name">Vorname</label>
+            <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp" placeholder="" />
 
-   <div class="col-12 col-md-6">
-       <h1>Title</h1>
-  <p>Descriptiom</p>
-    <form method="POST">
-      <div class="form-group">
-        <label for="name">Vorname</label>
-        <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp" placeholder="">
+            <label for="lastname">Nachname</label>
+            <input type="text" class="form-control" id="lastname" name="lastname" placeholder="" />
 
-        <label for="lastname">Nachname</label>
-        <input type="text" class="form-control" id="lastname" name="lastname"  placeholder="">
+            <label for="email">E-Mail</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="" />
 
-        <label for="email">E-Mail</label>
-        <input type="email" class="form-control" id="email" name="email"  placeholder="">
+            <label for="password">Passwort</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="" />
 
-        <label for="password">Passwort</label>
-        <input type="password" class="form-control" id="password" name="password" placeholder="">
-
-      <br>
-      <button type="submit" class="btn btn-danger btn-block w-100">Registrieren</button>
-              </div>
-</form>
-   </div>
-   </div>
-   </div>
+            <br />
+            
+            <button type="submit" class="btn btn-danger btn-block w-100">Registrieren</button>
+            
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
+{% endblock %}
