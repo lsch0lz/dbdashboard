@@ -43,8 +43,10 @@ def login_user():
 def route_login_user():
     email = request.form['email']
     password = request.form['password']
-    verify_password(email, password)
-    return render_template('dashboard.html')
+    if verify_password(email, password):
+        return render_template('dashboard.html')
+    else:
+        return render_template('login.html')
 
 
 # signup
