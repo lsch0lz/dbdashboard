@@ -44,7 +44,7 @@ def route_verify_password():
     email = request.form['email']
     password = request.form['password']
     val = verify_password(email, password)
-    return {'Msg': val}
+    return render_template('dashboard.html')
 
 # signup
 @app.route('/signup')
