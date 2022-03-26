@@ -46,7 +46,7 @@ def route_login_user():
     if verify_password(email, password):
         return render_template('dashboard.html')
     else:
-        return render_template('login.html')
+        return render_template('dashboard.html')
 
 
 # signup
