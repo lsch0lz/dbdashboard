@@ -1,5 +1,4 @@
 import os
-import sys
 from flask import Flask, render_template, request
 
 from controller.database import get_conn
@@ -36,20 +35,16 @@ def welcome():
 
 # login
 @app.route('/login')
-def check():
+def login_user():
     return render_template('login.html',
                            title="Login")
 
 @app.route('/login', methods=['POST'])
-def route_verify_password():
+def route_login_user():
     email = request.form['email']
     password = request.form['password']
-    if verify_password(email, password) == True:
-        print('Password is OK', file=sys.stderr)
-        return render_template('dashboard.html')
-    else:
-        print('Password is NOT ok', file=sys.stderr)
-        return render_template('login.html')
+    verify_password(email, password)
+    return render_template('dashboard.html')
 
 
 # signup
