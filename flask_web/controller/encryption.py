@@ -19,9 +19,6 @@ def verify_password(email: str, password_user: str) -> bool:
     result_ = result[0]
     result__ = str(result_)[2:-3]
 
-    if sha256_crypt.verify(str(password_user), result__) == True:
+    if sha256_crypt.verify(str(password_user), result__):
         # TODO: redirect to homepage
-        return True
-    else:
-        # TODO: redirect to login-page
-        return False
+        return None
