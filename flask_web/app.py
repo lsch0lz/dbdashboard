@@ -43,8 +43,13 @@ def check():
 def route_verify_password():
     email = request.form['email']
     password = request.form['password']
-    verify_password(email, password)
-    return render_template('dashboard.html')
+    if verify_password(email, password) == True:
+        print("Password is OK")
+        return render_template('dashboard.html')
+    else:
+        print("Password is NOT ok")
+        return render_template('login.html')
+
 
 # signup
 @app.route('/signup')
