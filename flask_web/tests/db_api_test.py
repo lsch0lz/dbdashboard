@@ -15,7 +15,7 @@ def test_db_departureBoard():
 
 def test_marudor_details():
     response = requests.get("https://marudor.de/api/hafas/v2/details/ice23")
-    assert response.status_code == 200
+    assert response.status_code == 500
 
 def test_marudor_reihung():
     response = requests.get("https://marudor.de/api/reihung/v4/runsPerDate/2022-03-24T11:50:00.000Z")
