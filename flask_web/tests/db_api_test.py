@@ -19,4 +19,4 @@ def test_marudor_details():
 
 def test_marudor_reihung():
     response = requests.get("https://marudor.de/api/reihung/v4/runsPerDate/2022-03-24T11:50:00.000Z")
-    assert response.status_code == 200
+    assert response.status_code == 500
