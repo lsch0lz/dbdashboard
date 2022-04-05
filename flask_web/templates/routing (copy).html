@@ -1,0 +1,72 @@
+{% extends 'layout.html' %}
+{% set active_page = "routing" %}
+
+{% block content %}
+<div class="container">
+  <br>
+  <div class="container">
+    <h1>{{title}}</h1>
+    <div class="row justify-content-md-center">
+   <div class="col-lg-3 col-sm-12">
+     <br>
+           <h3>Suche</h3> 
+    <form>  
+      <div class="form-group">
+        <label for="exampleInputEmail1">Start</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+        <label for="exampleInputPassword1">Ziel</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+     
+        <label for="exampleInputPassword1">Uhrzeit</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+     
+        <label for="exampleInputPassword1">Datum</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+
+      <br>
+      <button type="submit" class="btn btn-danger btn-block w-100">Suchen</button>
+              </div>
+</form>
+   </div>
+  <div class="col-lg-6 col-sm-7">
+      <br>
+    <h3>Verbindungen</h3> 
+    <table class="table table-hover" >
+      <tr>
+        {% for header in ahead %}
+        <th>{{ header }}</th>
+        {% endfor %}
+      </tr>
+      {% for row in adata %}
+      <tr>
+        {% for cell in row %}
+        <td>{{ cell }}</td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+  <div class="col-lg-3 col-sm-5">
+      <br>
+        <h3>Details</h3> 
+        <table class="table table-hover" >
+      <tr>
+        {% for header in bhead %}
+        <th>{{ header }}</th>
+        {% endfor %}
+      </tr>
+      {% for row in bdata %}
+      <tr>
+        {% for cell in row %}
+        <td>{{ cell }}</td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+  <div class="col-lg-3 col-sm-5">
+  </div>
+   </div>
+   </div>
+</div>
+{% endblock %}

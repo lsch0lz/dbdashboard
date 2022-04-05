@@ -20,7 +20,7 @@
     font-style: normal;}
 html, body{font-family: 'db_sans' !important;}
 
-            /*Dark Mode*/ @media (prefers-color-scheme: dark) {
+            /*Dark Mode @media (prefers-color-scheme: dark) {
               
             body{
               background-color: #111;
@@ -29,18 +29,18 @@ html, body{font-family: 'db_sans' !important;}
             
             .bg-dark {background-color: #191919 !important;}
             
-            /*Navbar*/
+            /*Navbar
             .nav-link.active {color: #dc3545 !important;font-weight: 900;}
             .nav-link {color: white !important;}
             a.nav-link.disabled  {color: #aaa !important;}
             .navbar-brand {color: white;}
               
-            /*Inputs*/
+            /*Inputs
             .form-control {background: transparent;}
             input {color: white !important;}
             input:focus {background-color: #111 !important;}
           
-            /*Collapse*/
+            /*Collapse
             .card.card-body {
               background-color: transparent;
               background-color: #1c1f23 !important;}
@@ -48,11 +48,11 @@ html, body{font-family: 'db_sans' !important;}
               background-color:#5c636a;
               color: white !important;}
             
-            /*Tables*/
+            /*Tables
             table {color: white !important;}
           
-            /*Footer*/
-            footer div {color: black !important;}
+            /*Footer
+            footer div {color: white !important;}
 
 }/*WhiteMode*/
 
@@ -61,27 +61,36 @@ html, body{font-family: 'db_sans' !important;}
 .navbar {
 }
 
-/*.navbar-toggler {
+.navbar-toggler {
 border: none !important;
 outline: none !important;
-}*/
+}
 
+.nav-link.active {color: #dc3545 !important;font-weight: 900;}
+.nav-link {color: #222 !important;}
+a.nav-link.disabled  {color: #444 !important;}
+.navbar-brand {color: #222 !important}
 
 a:hover{
   color: #ddd;
 }
 
+
+
+
 /*Inputs*/
 .form-control {
     background-color: #1c1f23;
+    background-color: #c0c0c0;
     border: none;}
 
-/*Collapse*/
+/*Collapse bzw. Optionen im Dashboard*/
 .card.card-body {
   background-color: transparent;
-  background-color: #1c1f23 !important;}
+  background-color: #ccc !important;}
+  border: none;
 .optionen {
-    background-color:#5c636a;
+    background-color:##aaa;
     border: none !important;
     color: white !important;}
 #collapseExample {margin-top: 20px;}
@@ -89,29 +98,54 @@ a:hover{
 
 /*Tables*/
 
+a{
 
+  color: #dc3545;
+  text-decoration: none;
+} 
 
-
+/* Logos */
 .static {
   position:absolute;
   background: white;
 }
-
 .static:hover {
   opacity:0;
 }
-
 img.active {
-    top: 10px;
+  top: 10px;
+  border-radius: 5px;
 }
-
 img.static {
-top: 15.45px;
+  top: 15.45px;
+  border-radius: 5px;
     /* height: 30px !important; */
 }
 
 
+/* Footer */
+.footer-1{
+  padding-top: 50px !important;
+}
 
+
+/* Dark Mode */
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+
+.col-xs-12.col-sm-6.col-md-3 {
+    padding: 20px;
+}
+
+.centern {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
 
 
 </style>

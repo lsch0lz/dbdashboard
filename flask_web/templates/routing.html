@@ -1,72 +1,147 @@
-{% extends 'layout.html' %}
-{% set active_page = "routing" %}
+{% extends 'layout.html' %} {% set active_page = "routing" %} {% block content %}
+<script>
+  $('#detailstable > tbody  > tr').each(function() {
+    console.log("test");
+      });
 
-{% block content %}
+</script>
+
 <div class="container">
-  <br>
-  <div class="container">
-    <h1>{{title}}</h1>
+   <br>
     <div class="row justify-content-md-center">
-   <div class="col-lg-3 col-sm-12">
-     <br>
-           <h3>Suche</h3> 
-    <form>  
-      <div class="form-group">
-        <label for="exampleInputEmail1">Start</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
-        <label for="exampleInputPassword1">Ziel</label>
-        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
-     
-        <label for="exampleInputPassword1">Uhrzeit</label>
-        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
-     
-        <label for="exampleInputPassword1">Datum</label>
-        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+      <div class="col-md-8">
+            <br>
+            <h2>Reiseauskunft</h2>
+            <form>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="startingstation">Startbahnhof</label>
+                            <input type="text" class="form-control" id="startingstation" placeholder="" />
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="destinationstation">Zielbahnhof</label>
+                            <input type="text" class="form-control" id="destinationstation" placeholder="" />
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="date">Datum</label>
+                            <input type="text" class="form-control" id="date" placeholder="" />
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="time">Uhrzeit</label>
+                            <input type="text" class="form-control" id="time" placeholder="" />
+                        </div>
+                    </div>
+                </div>
+                  <div class="row justify-content-md-center">
+            <div class="d-flex justify-content-between mb-3">
+    <div class="p-4">
+      <button type="submit" class="btn  btn-dark">-1d</button>
+     <button type="submit" class="btn  btn-dark">-1h</button></div>
+    <div class="p-4 ">
+      <button type="submit" class="btn  btn-dark">+1h</button>
+     <button type="submit" class="btn  btn-dark">+1d</button></div></div>
+  </div>
+      
+                <div class="row justify-content-md-center">
+                    <div class="col-md-6">
+                        <button class="btn btn-secondary btn-block w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                            Optionen
+                        </button>
+                      <br></br>    
+                    </div>
 
-      <br>
-      <button type="submit" class="btn btn-danger btn-block w-100">Suchen</button>
-              </div>
-</form>
-   </div>
-  <div class="col-lg-6 col-sm-7">
-      <br>
-    <h3>Verbindungen</h3> 
-    <table class="table table-hover" >
-      <tr>
-        {% for header in ahead %}
-        <th>{{ header }}</th>
-        {% endfor %}
-      </tr>
-      {% for row in adata %}
-      <tr>
-        {% for cell in row %}
-        <td>{{ cell }}</td>
-        {% endfor %}
-      </tr>
-      {% endfor %}
-    </table>
-  </div>
-  <div class="col-lg-3 col-sm-5">
-      <br>
-        <h3>Details</h3> 
-        <table class="table table-hover" >
-      <tr>
-        {% for header in bhead %}
-        <th>{{ header }}</th>
-        {% endfor %}
-      </tr>
-      {% for row in bdata %}
-      <tr>
-        {% for cell in row %}
-        <td>{{ cell }}</td>
-        {% endfor %}
-      </tr>
-      {% endfor %}
-    </table>
-  </div>
-  <div class="col-lg-3 col-sm-5">
-  </div>
-   </div>
-   </div>
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-danger btn-block w-100">Suchen</button>
+                    </div>
+                </div>
+
+
+              
+                <div class="collapse" id="collapseExample">
+                    <div class="card card-body bg-dark">
+                      <div class="row justify-content-md-center">
+                    <div class="col-md-6">
+                         <label for="exampleFormControlSelect1">Maximale Umstiege</label>
+                        <select class="form-control optionen" id="exampleFormControlSelect1">
+                          
+                          <option>-</option>
+                          <option>0</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                       <label for="exampleFormControlSelect1">Mininmale Umsteigezeit</label>
+                        <select class="form-control optionen" id="exampleFormControlSelect1">
+                          <option>-</option>
+                          <option>5</option>
+                          <option>10</option>
+                          <option>15</option>
+                          <option>20</option>
+                          <option>25</option>
+                          <option>30</option>
+                        </select>
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Verbindungen -->
+    <div class="row justify-content-md-center">
+        <div class="col-md-8">
+            <br />
+            <h2>Verbindungen</h2>
+
+
+         
+  
+            <table class="table table-hover verbindungen">
+                <tr>
+                    {% for header in ahead %}
+                    <th>{{ header }}</th>
+                    {% endfor %}
+                </tr>
+                {% for row in adata %}
+                <tr>
+                    {% for cell in row %}
+                    <td>{{ cell }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </table>
+        </div>  
+    </div>
+
+    <!-- Details -->
+    <div class="row justify-content-md-center">
+        <div class="col-md-8">
+            <br />
+            <h2>Details</h2>
+            <table class="table table-hover details" id="detailstable"> 
+                <tr>
+                    {% for header in bhead %}
+                    <th>{{ header }}</th>
+                    {% endfor %}
+                </tr>
+                {% for row in bdata %}
+                <tr>
+                    {% for cell in row %}
+                    <td>{{ cell }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
 </div>
+
 {% endblock %}
+
