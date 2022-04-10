@@ -25,11 +25,11 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="date">Datum</label>
-                            <input type="text" class="form-control" id="date" name="date" placeholder="" />
+                            <input type="date" class="form-control" id="date" name="date" placeholder="" />
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="time">Uhrzeit</label>
-                            <input type="text" class="form-control" id="time" name="time" placeholder="" />
+                            <input type="time" class="form-control" id="time" name="time" placeholder="" />
                         </div>
                     </div>
                 </div>
@@ -98,12 +98,12 @@
     <div class="row justify-content-md-center">
         <div class="col-md-8">
             <br />
-            <h2>Verbindungen</h2>
+            <h2 id="Verbindungen">Verbindungen</h2>
 
 
-         
-  
-            <table class="table table-hover verbindungen">
+
+
+            <table class="table table-hover verbindungen" id="Verbindungstable">
                 <tr>
                     {% for header in ahead %}
                     <th>{{ header }}</th>
@@ -117,14 +117,14 @@
                 </tr>
                 {% endfor %}
             </table>
-        </div>  
+        </div>
     </div>
 
     <!-- Details -->
     <div class="row justify-content-md-center">
         <div class="col-md-8">
             <br />
-            <h2>Details</h2>
+            <h2 id="Details">Details</h2>
             <table class="table table-hover details" id="detailstable"> 
                 <tr>
                     {% for header in bhead %}
