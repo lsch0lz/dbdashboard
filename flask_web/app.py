@@ -5,18 +5,19 @@ from controller.database import get_conn
 from controller.encryption import verify_password
 
 from model.registration import create_user
+from model.routing import get_routing, get_details
 
 app = Flask(__name__)
 
 ahead = ("Abfahrt","Ankunft","Name","Dauer")
-adata = (
-  ("15:01","18:17","ICE 7731","2:14"),
-  ("15:02","18:17","ICE 7732","2:14"),
-  ("15:03","18:17","ICE 7733","2:14"),
-  ("15:04","18:17","ICE 7734","2:14"),
-  ("15:05","18:17","ICE 7735","2:14"),
-  ("15:06","18:17","ICE 7736","2:14"),
-)
+adata = [
+        ["15:01", "18:17", "ICE 7731", "2:14"],
+        ["15:02", "18:17", "ICE 7732", "2:14"],
+        ["15:03", "18:17", "ICE 7733", "2:14"],
+        ["15:04", "18:17", "ICE 7734", "2:14"],
+        ["15:05", "18:17", "ICE 7735", "2:14"],
+        ["15:06", "18:17", "ICE 7736", "2:14"],
+    ]
 
 bhead = ("Abfahrt","Bahnhof","Gleis")
 bdata = (
@@ -66,8 +67,19 @@ def route_signup_user():
 
 @app.route('/routing')
 def routing():
-  return render_template('routing.html',
-        title="Reiseauskunft", ahead=ahead, adata=adata, bhead=bhead, bdata=bdata)
+    return render_template('routing.html',
+        title="Reiseauskunft")
+
+@app.route('/routing', methods=['POST'])
+def routing_data():
+    startingstation = request.form['startingstation']
+    destinationstation = request.form['destinationstation']
+    datum = request.form['date']
+    uhrzeit = request.form['time']
+    adata_ = get_routing(startingstation, destinationstation, datum, uhrzeit)
+    bdata_ = get_details(startingstation, destinationstation, datum, uhrzeit)
+    return render_template('routing.html',
+                           title="Reiseauskunft", ahead=ahead, adata=adata_, bhead=bhead, bdata=bdata_)
 
 @app.route('/dashboard')
 def dashboard():
