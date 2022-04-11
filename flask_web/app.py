@@ -86,5 +86,9 @@ def dashboard():
   return render_template('dashboard.html',
         title="Dashboard", ahead=ahead, adata=adata, bhead=bhead, bdata=bdata)
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=os.getenv('PORT'))
