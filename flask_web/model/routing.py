@@ -66,5 +66,3 @@ def get_details(startingstation: str, destinationstation: str, datum: str, uhrze
             bdata.append(data)
 
     return bdata
-
-get_details("Berlin", "Frankfurt", "2022-04-10", "14:15")
