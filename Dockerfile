@@ -4,4 +4,5 @@ COPY . /usr/src/app/
 WORKDIR /usr/src/app/
 EXPOSE 8080
 RUN pip install -r flask_web/requirements.txt
-CMD ["python", "flask_web/app.py"]
+ENTRYPOINT ["./flask_web"]
+CMD ["python", "app.py"]
